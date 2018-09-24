@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using Common.Logging;
+using NLog;
+using LogManager = Common.Logging.LogManager;
 
 namespace LoggerPerfTest
 {
@@ -9,6 +10,8 @@ namespace LoggerPerfTest
     {
         static void Main(string[] args)
         {
+            GlobalDiagnosticsContext.Set("Application", "LoggerPerfTest");
+
             var logger = LogManager.GetLogger("PerfTest");
             //var logger = LogManager.GetLogger("PerfTestCrash");
             var log4mb = File.ReadAllText("4MB.txt");
@@ -35,7 +38,6 @@ namespace LoggerPerfTest
             Console.WriteLine($"PeakVirtualMemorySize = {proc.PeakVirtualMemorySize64}");
             Console.WriteLine($"PagedMemorySize = {proc.PagedMemorySize64}");
             Console.WriteLine($"PeakPagedMemorySize = {proc.PeakPagedMemorySize64}");
-            
 
             Console.ReadKey();
         }
