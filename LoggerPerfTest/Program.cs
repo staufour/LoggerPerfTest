@@ -10,7 +10,8 @@ namespace LoggerPerfTest
     {
         static void Main(string[] args)
         {
-            GlobalDiagnosticsContext.Set("Application", "LoggerPerfTest");
+            MappedDiagnosticsLogicalContext.Set("Application", "LoggerPerfTest");
+            GlobalDiagnosticsContext.Set("Version", "12");
 
             var logger = LogManager.GetLogger("PerfTest");
             //var logger = LogManager.GetLogger("PerfTestCrash");
