@@ -6,4 +6,4 @@ With the threadid or GDC or MLDC in the layout of a target with async=true, the 
 In the code (Program.cs or HomeController.cs) uncomment the 'PerfTestCrash' logger to see the exception.
 Work fine with the 'PerfTest' logger.
 
-** WARNING This example generate a >3GB log file. **
+**WARNING This example generate a >3GB log file.**
