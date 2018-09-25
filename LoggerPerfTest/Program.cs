@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using NLog;
-using LogManager = Common.Logging.LogManager;
 
 namespace LoggerPerfTest
 {
+    using NLog;
+
     class Program
     {
         static void Main(string[] args)
@@ -13,8 +13,8 @@ namespace LoggerPerfTest
             MappedDiagnosticsLogicalContext.Set("Application", "LoggerPerfTest");
             GlobalDiagnosticsContext.Set("Version", "12");
 
-            var logger = LogManager.GetLogger("PerfTest");
-            //var logger = LogManager.GetLogger("PerfTestCrash");
+            //var logger = LogManager.GetLogger("PerfTest");
+            var logger = LogManager.GetLogger("PerfTestCrash");
             var log4mb = File.ReadAllText("4MB.txt");
             var nb4mb = 1000;
             long duration4mb;
